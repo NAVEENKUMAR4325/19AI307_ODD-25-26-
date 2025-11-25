@@ -24,8 +24,8 @@ To write a Java program that reverses a given string using character array manip
  ```
 /*
 Program to implement a Strings and Math Function using Java
-Developed by: Santhosh S
-RegisterNumber: 212222220039
+Developed by: Naveen Kumar E
+RegisterNumber: 212222220029
 */
 ```
 
@@ -58,5 +58,6 @@ public class ReverseStringManual {
 
 ## RESULT:
 The string reversal implementation successfully reversed all test strings using character array iteration, demonstrating proper handling of various input cases.
+
 
 

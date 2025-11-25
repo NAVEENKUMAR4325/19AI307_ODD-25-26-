@@ -20,8 +20,8 @@ To implement inheritance by creating a Person superclass and Student subclass wi
  ```
 /*
 Program to implement a Inheritance and Aggregation using Java
-Developed by: Santhosh S
-RegisterNumber: 212222220039
+Developed by: Naveen Kumar E
+RegisterNumber: 212222220029
 */
 ```
 
@@ -84,5 +84,6 @@ public class prog {
 
 ## RESULT:
 The inheritance hierarchy was successfully implemented. The Student class inherited name and age from Person class and correctly calculated grades based on marks, demonstrating proper inheritance and method implementation.
+
 
 

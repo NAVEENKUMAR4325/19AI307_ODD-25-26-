@@ -1,19 +1,19 @@
-# Ex.No:5(D) THREAD PRIORITY
+# Ex.No:5(E) MULTITHREADING -SYNCHRONIZATION
 
 ## QUESTION:
-Write a Java program to implement a extending thread class
+Create a program that reads a thread name and a priority (1–10), sets that priority to a new thread, prints both values.
 
 
 ## AIM:
-To implement multithreading in Java by extending the Thread class.
+To create a thread with user-defined name and priority, then display both values.
 
 
 ## ALGORITHM :
-1.Create a class that extends Thread class
-2.Override the run() method with thread execution logic
-3.Create multiple thread objects in main method
-4.Start threads using start() method
-5.Observe concurrent execution
+1.Read thread name and priority (1-10) from user input
+2.Create a new Thread with the given name
+3.Set thread priority using setPriority() method
+4.Start the thread and print name and priority values
+5.Verify priority setting within valid range
 
 
 
@@ -22,60 +22,31 @@ To implement multithreading in Java by extending the Thread class.
 ## PROGRAM:
  ```
 /*
-Program to implement a Thread Priority Concept using Java
+Program to implement a Synchronization concept using Java
 Developed by: Naveen Kumar E
-RegisterNumber: 212222220029
+RegisterNumber:  212222220029
 */
 ```
 
 ## SOURCE CODE:
 ```
-class MyThread extends Thread {
-    private String threadName;
-    
-    // Constructor
-    public MyThread(String name) {
-        this.threadName = name;
-    }
-    
-    // Override the run() method - this contains the code that will run in the thread
-    @Override
-    public void run() {
-        try {
-            // Simulate some work by making the thread sleep
-            for (int i = 1; i <= 5; i++) {
-                System.out.println("Thread: " + i + " from " + threadName);
-                Thread.sleep(500); // Sleep for 500 milliseconds
-            }
-        } catch (InterruptedException e) {
-            System.out.println("Thread " + threadName + " interrupted.");
-        }
-        System.out.println("Thread " + threadName + " finished.");
-    }
-}
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Main thread started");
+        Scanner scanner = new Scanner(System.in);
         
-        // Create thread objects
-        MyThread thread1 = new MyThread("Thread-1");
-        MyThread thread2 = new MyThread("Thread-2");
+        String threadName = scanner.nextLine();
         
-        // Start the threads (this calls the run() method)
-        thread1.start();
-        thread2.start();
+        int priority = scanner.nextInt();
         
-        // Main thread continues its own work
-        try {
-            // Wait for both threads to finish
-            thread1.join();
-            thread2.join();
-        } catch (InterruptedException e) {
-            System.out.println("Main thread interrupted.");
-        }
+        Thread userThread = new Thread(threadName);
         
-        System.out.println("Main thread finished");
+        userThread.setPriority(priority);
+        
+        System.out.println("Thread " + userThread.getName() + " priority is " + userThread.getPriority());
+        
+        scanner.close();
     }
 }
 ```
@@ -86,10 +57,11 @@ public class Main {
 
 
 ## OUTPUT:
-<img width="497" height="323" alt="image" src="https://github.com/user-attachments/assets/7c939dfb-f838-4e79-a81e-286daa853f1c" />
+<img width="772" height="356" alt="image" src="https://github.com/user-attachments/assets/68be5516-b0d9-4b15-a9c5-8922fc14898a" />
+
 
 
 ## RESULT:
-Multithreading was successfully implemented by extending Thread class. Multiple threads executed concurrently, demonstrating proper thread creation and execution with separate call stacks.
+The program successfully created threads with user-specified names and priorities. Both thread name and priority values were correctly set and displayed, demonstrating proper thread configuration.
 
 
